@@ -24,7 +24,10 @@ public class ZombiePlant {
     }
 
     public void treat(int treatmentPotency){
-        if(treatmentPotency <= maxPotency){
+        if(treatmentPotency > maxPotency || leftTreatments == 0){
+            leftTreatments++;
+        }
+        if(treatmentPotency <= maxPotency && treatmentPotency > 0){
             leftTreatments--;
         }
     }
